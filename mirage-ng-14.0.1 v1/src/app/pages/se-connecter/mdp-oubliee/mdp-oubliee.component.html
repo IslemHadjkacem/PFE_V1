@@ -1,0 +1,41 @@
+<div class="login-body" >
+    <p-toast></p-toast>
+    <div class="login-content">
+        <!-- <div class="night-switch">
+            <p-button styleClass="dark-switch"  icon="pi pi-circle-on" (click)="dark = true"></p-button>
+            <p-button styleClass="light-switch"  icon="pi pi-circle-off" (click)="dark = false"></p-button>
+        </div> -->
+        <div class="login-panel">
+            <div class="login-panel-content">
+                <div class="logo">
+                    <img src="assets/layout/images/asm.png" alt="mirage-layout" />
+                </div> 
+                
+                <!-- <h1 style="color: black !important;"> Réinitialisation du mot de passe</h1> -->
+                <h2 style="color: black !important;"> Mot de passe oublié </h2>
+                <h4 style="color: black !important;">Veuillez saisir votre adresse courriel ci-dessous pour changer votre mot de passe. </h4>
+
+                  <form [formGroup]="mdpForm" (ngSubmit)="onSubmit()">
+                <div class="forms">
+                    <div class="input_box">
+                        <input type="text" id="email" class="input-field" formControlName="email" required>
+                        <label for="email" class="label">Email</label>
+                        <i class="pi pi-envelope icon"></i>
+                      </div>
+                   
+
+                    <div class="buttons">
+                        <!-- <button pButton   class="input-submit" type="submit"  label="Continue"(click)="redirectToChangerMotDePasse()>
+                        </button> -->
+                        <button pButton class="input-submit" type="submit" label="Continue">
+                        </button>
+                        
+                    </div>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+

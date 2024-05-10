@@ -1,0 +1,100 @@
+// .p-button-rounded {
+//     color:orangered !important;
+// }
+.icon {
+    color: orangered !important;
+}
+.pagination {
+    background-color: orange;
+    color: orange ;
+}
+// .custom-p-table {
+//     color: rgb(183, 81, 81) !important;/* Vous pouvez changer "red" par la couleur de votre choix */
+//     /* Autres styles CSS */
+// }
+// p-table.custom-table {
+//     color: orange !important;
+// }
+// .rows {
+//     color: orange !important;
+// }
+
+// .custom-p-table {
+//     /* Styles personnalisés pour votre p-table */
+//     color: orange !important; /* Couleur du texte */
+//     background-color: lightgrey !important; /* Couleur de fond */
+//     border: 1px solid black !important; /* Bordure */
+//     /* Ajoutez d'autres styles personnalisés selon vos besoins */
+// }
+
+// .button-orange {
+//     background-color: #fc6f11!important; /* Changer la couleur de fond */
+//     color: #ffffff !important; /* Changer la couleur du texte */
+//   }
+.button-orange {
+    background-color: #fc6f11!important; /* Changer la couleur de fond */
+    color: #ffffff !important; /* Changer la couleur du texte */
+    border-radius: 50%; /* Définir la forme de cercle */
+    width: 35px; /* Ajuster la largeur du bouton selon vos besoins */
+    height: 35px; /* Ajuster la hauteur du bouton selon vos besoins */
+    display: flex; /* Permettre le centrage du contenu */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    padding: 0; /* Supprimer le rembourrage interne */
+}
+#dt {
+    color: #fc6f11 !important;
+}
+::ng-deep p-table .p-paginator-current {
+    color: #fc6f11 !important; /* Changer la couleur du texte en orange */
+}
+// /* Cibler les éléments sélectionnés */
+// ::ng-deep p-table .p-table .p-row.selected {
+//     background-color: orange !important; /* Changer la couleur de fond des éléments sélectionnés */
+// }
+
+// /* Cibler les lignes survolées */
+// ::ng-deep p-table .p-table .p-row:hover {
+//     background-color: orange !important; /* Changer la couleur de fond des lignes survolées */
+// }
+/* Cibler les boutons de pagination */
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+    background-color: #fc6f11 !important; /* Changer la couleur de fond des boutons de pagination */
+    color: white; /* Changer la couleur du texte en blanc */
+}
+
+// ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:focus {
+//     outline: 2px solid orange !important; /* Changer la couleur du contour en orange */
+//     outline-offset: -2px; /* Pour compenser l'augmentation de la taille de l'outline */
+// }
+
+/* Cibler la ligne sélectionnée */
+::ng-deep .p-dropdown .p-dropdown-items .p-dropdown-item.p-highlight {
+    background-color: #fc6f11 !important; /* Couleur de fond de la ligne sélectionnée */
+}
+
+/* Cibler les options de sélection de lignes survolées */
+::ng-deep .p-dropdown .p-dropdown-items .p-dropdown-item:hover {
+    background-color: lightgray !important; /* Couleur de fond survolée */
+}
+
+/* Cibler le bouton de la liste déroulante des pages lorsqu'il est en focus */
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:focus {
+    outline: 2px solid orange !important; /* Changer la couleur du contour en orange */
+    outline-offset: -2px; /* Pour compenser l'augmentation de la taille de l'outline */
+}
+
+/* Cibler les boutons "Première page" et "Dernière page" de la pagination */
+::ng-deep .p-paginator .p-paginator-first, 
+::ng-deep .p-paginator .p-paginator-last {
+    background-color: rgb(255, 255, 255); /* Changer la couleur de fond en orange */
+    color: #fc6f11; /* Changer la couleur du texte en blanc */
+}
+
+/* Cibler les boutons "Précédent" et "Suivant" de la pagination */
+::ng-deep .p-paginator .p-paginator-prev,
+::ng-deep .p-paginator .p-paginator-next {
+    background-color: rgb(255, 255, 255) !important; /* Changer la couleur de fond en orange */
+    color: #fc6f11; /* Changer la couleur du texte en blanc */
+}
+

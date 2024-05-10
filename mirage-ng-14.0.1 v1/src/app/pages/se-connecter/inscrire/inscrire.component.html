@@ -1,0 +1,45 @@
+<!-- <div class="login-body" [ngClass]="{'layout-dark': dark, 'layout-light': !dark}">
+
+    <div class="login-content">
+        <div class="night-switch">
+            <p-button styleClass="dark-switch"  icon="pi pi-circle-on" (click)="dark = true"></p-button>
+            <p-button styleClass="light-switch"  icon="pi pi-circle-off" (click)="dark = false"></p-button>
+        </div>
+        <div class="login-panel">
+            <div class="login-panel-content">
+                <div class="logo">
+                    <img src="assets/layout/images/logo-mirage@2x.png" alt="mirage-layout" />
+                </div> 
+                 <h1>Ajouter un utilisateur </h1>
+                <p>Bienvenue, veuillez utiliser le formulaire ci-dessous pour créer un nouveau compte utilisateur.</p>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="forms">
+                    <div class="login-input-wrapper">
+                        <label for="nom">Nom</label>
+                        <input id="nom" pInputText formControlName="nom" placeholder="Entrez votre nom..." />
+                        <i class="pi pi-user"></i>
+                    </div>
+                    <div class="login-input-wrapper">
+                        <label for="prenom">Prenom</label>
+                        <input id="prenom" pInputText formControlName="prenom" placeholder="Entrez votre prénom..." />
+                        <i class="pi pi-user"></i>
+                    </div>
+                    <div class="login-input-wrapper">
+                        <label for="mot_de_passe">Mot de passe</label>
+                        <input type="password" id="mot_de_passe" pPassword formControlName="mot_de_passe" placeholder="Entrez votre mot de passe" [feedback]="false"/>
+                        <i class="pi pi-lock"></i>
+                    </div>
+  
+                   
+  
+                    <div class="buttons">
+                        <button pButton type="submit"  label="S'inscrire"></button>
+                         <a href="#" class="secondary-button" (click)="sendResetLink()">Mot de passe oublié?</a> 
+                    </div>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+   -->

@@ -1,0 +1,176 @@
+
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <p-toast></p-toast>
+            <p-toolbar styleClass="mb-4">
+                <ng-template pTemplate="left">
+                    <div class="my-2">
+
+                        <button pButton pRipple  icon="pi pi-plus" class="p-button-success mr-2" 
+                        (click)="openDynamicForm()">
+                        </button>
+                        <!-- (click)="openDynamicForm()"> -->
+                        
+                    </div>
+                </ng-template>
+
+                
+            </p-toolbar>
+          <!-- //  <app-form-dynamic (dialogClosedSuccessfully)="refreshDocumentList($event)"></app-form-dynamic> -->
+
+
+            <p-table #dt   [value]="documents" [columns]="cols" responsiveLayout="scroll" [rows]="10"
+            [globalFilterFields]="['id','uitilisateur.id','type_document.id','donnees.id']" 
+            [rows]="10"
+            [paginator]="true" [rowsPerPageOptions]="[10,20,30]"
+             [showCurrentPageReport]="true" 
+            currentPageReportTemplate=" Affichage du {first} au {last} des {totalRecords} entrées" 
+            [(selection)]="selectedformulaire"
+             selectionMode="multiple" [rowHover]="true" 
+             dataKey="id"   >
+<!-- Tableau des documents -->
+
+
+
+                <ng-template pTemplate="caption">
+                    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+                        <h5 class="m-0">Document </h5>
+                        <span class="block mt-2 md:mt-0 p-input-icon-left">
+                            <!-- <i class="pi pi-search"></i> -->
+                            <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                placeholder="Search..." /> -->
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+                        
+                        <th pSortableColumn="type_document">Type document <p-sortIcon field="type_document" ></p-sortIcon></th>
+                        <th pSortableColumn="utilisateur">Utilisateur <p-sortIcon field="utilisateur"></p-sortIcon></th>
+                        <!-- <th pSortableColumn="donnees">Données<p-sortIcon field="donnees"></p-sortIcon></th> -->
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-document>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="document"></p-tableCheckbox>
+                        </td>
+                        <td style="width:10%; min-width:6rem;">
+                            <span class="p-column-title">ID</span>
+                            
+                            {{document.id}}
+                        </td>
+                        <td style="width:10%; min-width:10rem;">
+                            <span class="p-column-title">Type document</span>
+                            {{document.type_document }}
+                        </td>
+                        <td style="width:10%; min-width:9rem;">
+                            <span class="p-column-title">utilisateur</span>
+                            <!-- {{document.utilisateur|| document.utilisateur}} -->
+                            {{ document.utilisateur?.nom || document.utilisateur }}
+                        </td>
+                       
+                        <!-- <td style="width:10%; min-width:10rem;">
+                            <span class="p-column-title">Données</span>
+                            {{document.donnees}}
+                        </td> -->
+                        <td style="min-width:6rem;">
+                            
+                            <div class="flex">
+                                <button pButton pRipple icon="pi pi-trash" class="button-violet"
+                                (click)="deleteData(document.id)"> </button>
+                                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2 mb-2 "
+                                (click)="opendocumentDialog(document) "> </button>
+                                <button pButton pRipple icon="pi pi-eye" class="button-blue"
+                                (click)="openDialog(document)">
+                                </button>
+                                <!-- <button pButton pRipple icon="pi pi-circle-fill" class="button-orange "
+                                (click)="selectTypeDoc(formulaire)"  > </button> -->
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <!-- <div *ngFor="let document of documents">
+                <p>ID de l'utilisateur: {{ document.utilisateur }}</p>
+
+              </div> -->
+              
+              <!-- <div (dialogClosedSuccessfully)="refreshDocumentList($event)"></div> -->
+
+        </div>
+        <p-dialog [(visible)]="deletedocumentDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span *ngIf="document">Etes-vous sûr que vous voulez supprimer <b>{{document.name}}</b>?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="Non"
+                    (click)="deletedocumentDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Oui"
+                    (click)="confirmDelete()"></button>
+            </ng-template>
+        </p-dialog>
+        
+
+        <p-dialog [(visible)]="deletedocumentsDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span>
+                    Etes-vous sûr de vouloir supprimer le document sélectionné ?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="Non"
+                    (click)="deletedocumentsDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Oui"
+                    (click)="confirmDeleteSelected()"></button>
+            </ng-template>
+        </p-dialog>
+    </div>
+</div>
+
+        <!-- <p-dialog [(visible)]="documentDialog" [style]="{width: '450px'}" header="{{header}}" [modal]="true"
+            class="p-fluid">
+            <ng-template pTemplate="content">
+                <form [formGroup]="documentform" (ngSubmit)="onSubmit()">
+                    <div class="field">
+                        <label for="id">ID</label>
+                        <input type="text" pInputText id="id" formControlName="id" required
+                            [ngClass]="{'ng-invalid ng-dirty' : submitted && !documentform.get('id').valid}" />
+                        <small class="ng-dirty ng-invalid" *ngIf="submitted && !document?.id">ID est requis.
+                            </small>
+                    </div>
+                 
+                
+                    <div class="field">
+                        <label for="utilisateur">Utilisateur</label>
+                        <input type="text" pInputText id="utilisateur" formControlName="utilisateur" required
+                            [ngClass]="{'ng-invalid ng-dirty' : submitted && !documentform.get('utilisateur').valid}" />
+                        <small class="ng-dirty ng-invalid" *ngIf="submitted && !document?.uitilisateur"> Le utilisateur est
+                            requis.</small>
+                    </div>
+                    <div class="field">
+                        <label for="donnees">Données</label>
+                        <input type="text" pInputText id="donnees" formControlName="donnees" required
+                            [ngClass]="{'ng-invalid ng-dirty' : submitted && !documentform.get('donnees').valid}" />
+                        <small class="ng-dirty ng-invalid" *ngIf="submitted && !document?.donnees"> La donnée est requis.</small>
+                    </div>
+
+
+
+                    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text"
+                        (click)="hideDialog()"></button>
+                        <button pButton pRipple label="Enregistrer" icon="pi pi-check" class="p-button-text" (click)="onSubmit()"></button>
+
+
+                </form>
+            </ng-template>
+        </p-dialog> -->
+
+
+

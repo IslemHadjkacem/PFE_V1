@@ -1,0 +1,223 @@
+
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     text-decoration-color: #d0610c; /* Définit la hauteur de la page pour occuper tout l'écran */
+//   }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-decoration-color: #d0610c; /* Définit la hauteur de la page pour occuper tout l'écran */
+    // margin-top: 90px;
+    margin-bottom: -50px; /* Réduire l'espace entre les éléments */
+  }
+//   .container {
+//     // text-align: center;
+//     margin-top: 50px; /* Ajustez la marge en fonction de votre mise en page */
+//   }
+  .image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -20px;
+  }
+  
+  .image img {
+    margin-bottom: -20px;
+    width: 100px; /* Vous pouvez ajuster la largeur selon vos besoins */
+    height: 100px; /* Vous pouvez ajuster la hauteur selon vos besoins */
+  }
+//   .btn {
+//     margin-top: 20px;
+//     font-size: 1em;
+//     padding: 10px 20px;
+//     border: none;
+//     background-color: #ccc; /* Gris par défaut */
+//     color: #fff;
+//     cursor: pointer;
+//     outline: none;
+//     border-radius: 5px;
+//     transition: background-color 0.3s, transform 0.3s;
+//   }
+  
+  .btn.active {
+    background-color: orange; /* Orange lorsque cliqué */
+  }
+  
+  .btn:hover {
+    background-color: #d0610c; /* Gris légèrement plus foncé au survol */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+//   .welcome-message {
+//     animation: fadeIn 1s ease-in-out;
+//     color: orange;
+//   }
+  .welcome-message {
+    animation: fadeIn 1s ease-in-out;
+    color: rgb(255, 102, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: left !important; 
+    margin-top: -190px;/* Aligner le texte à gauche */
+  }
+  .header {
+    text-align: center;
+    margin-top: 20px; /* Ajustez la marge en fonction de votre mise en page */
+  }
+  
+  .logo {
+    width: 150px; /* Ajustez la largeur du logo selon vos besoins */
+    height: auto; 
+    /* Garde les proportions de l'image */
+  }
+  
+ 
+  
+//   .btn {
+//     margin-top: 60px;
+//     font-size: 1em;
+//     padding: 10px 20px;
+//     border: none;
+//     background-color: #0e0e0e; /* Gris par défaut */
+//     color: #ffffff;
+//     cursor: pointer;
+//     outline: none;
+//     border-radius: 5px;
+//     transition: background-color 0.3s, transform 0.3s;
+//   }
+.btn {
+    margin-top: 10px; /* Réduire l'espace entre les boutons */
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    background-color:  #0e0e0e; /* Gris par défaut */
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .btn.active {
+    background-color: orange; /* Orange lorsque cliqué */
+  }
+  
+  .btn:hover {
+    background-color: #d0610c; /* Gris légèrement plus foncé au survol */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  .container p {
+    font-size:20px; /* Taille de la police */
+    color: #080808; /* Couleur du texte */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    margin-top: 60px;
+    word-wrap: break-word; /* Marge supérieure */
+    text-align: left !important;
+  }
+  /* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the logo image */
+.logo {
+  float: left;
+  padding: 10px;
+}
+
+/* Style the navigation title */
+.nav-title {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h2 {
+  font-size:30x; /* Taille de la police */
+}
+
+h2 span:first-letter {
+  color: orange; /* Couleur de la première lettre */
+}

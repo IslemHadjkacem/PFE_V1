@@ -1,0 +1,87 @@
+// .custom-multiselect .p-multiselect-trigger {
+//     width: 56px; 
+//     height: 70px;
+// }
+.p-multiSelect{
+width :70px;
+height: 50px;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px; /* Ajustez la valeur selon votre préférence */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  button {
+    background-color: #fc6f11; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 16px; /* Taille du texte */
+    transition: background-color 0.3s ease; /* Animation de transition */
+  }
+  
+  button:hover {
+    background-color: #ff964f !important; /* Couleur de fond au survol */
+  }
+  
+  .field {
+    margin-bottom: 20px;
+    /* Espacement en bas du champ */
+  }
+  
+  label {
+    display: block; /* Afficher le label sur une nouvelle ligne */
+    margin-bottom: 5px;
+    color: #000000 !important;
+    font-size: 18px;/* Espacement en bas du label */
+  }
+  
+  /* Stylisation du champ de sélection multiple */
+  .p-multiselect {
+    width: 100%; /* Largeur du champ de sélection multiple */
+  }
+  
+  /* Stylisation du texte flottant dans le champ de sélection multiple */
+  .p-float-label {
+    position: relative;
+  }
+  
+  /* Style du texte flottant lorsqu'il est en position flottante */
+  .p-float-label label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.2s, font-size 0.2s;
+  }
+  
+  /* Style du texte flottant lorsqu'il est en position flottante */
+  .p-float-label .p-multiselect-label {
+    padding-top: 20px; /* Espacement pour le label lorsque le champ est sélectionné */
+  }
+  
+  /* Style du texte flottant lorsqu'il est en position flottante */
+  .p-float-label .p-multiselect-trigger {
+    padding-top: 20px; /* Espacement pour le label lorsque le champ est sélectionné */
+  }
+  
+  /* Style du texte flottant lorsqu'il est en position flottante */
+  .p-float-label label.p-label-focus {
+    top: -20px; /* Déplacer le label vers le haut lorsqu'il est en position flottante */
+    font-size: 12px; /* Taille de la police réduite lorsqu'elle est en position flottante */
+    color: #007bff !important; /* Couleur du texte du label lorsqu'il est en position flottante */
+  }
+  
+  /* Style des éléments sélectionnés dans le champ de sélection multiple */
+//   .multiselected-utilisateur {
+//     background-color: rgb(255, 163, 16)!important; 
+//     padding: 5px 10px; /* Espacement intérieur des éléments sélectionnés */
+//     border-radius: 3px; /* Coins arrondis des éléments sélectionnés */
+//     margin-right: 5px; /* Marge à droite des éléments sélectionnés */
+//     margin-bottom: 5px; /* Marge en bas des éléments sélectionnés */
+//     display: inline-block; /* Affichage en ligne des éléments sélectionnés */
+//   }
+  

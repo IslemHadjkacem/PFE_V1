@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="text">
+      Formulaire 
+  </div>
+<!-- {{formSchema|json}} -->
+<form [formGroup]="form_dynamic" (ngSubmit)="onSubmit()">
+  <!-- <form (ngSubmit)="onSubmit(documentForm.value)" #documentForm="ngForm"> -->
+    <!-- Vos champs de formulaire ici -->
+    <!-- <button type="submit">Ajouter</button> -->
+    <div *ngFor="let component of formSchema?.components">
+      <ng-container *ngIf="component.type !== 'button'; else submitButton">
+        <div class="form-group">
+          <label [for]="component.key">{{ component.label }}</label>
+          <input *ngIf="component.type === 'textfield' || component.type === 'email'" 
+                 [type]="component.type === 'email' ? 'email' : 'text'" 
+                 [id]="component.key" 
+                 [formControlName]="component.key" 
+                 [placeholder]="component.placeholder" 
+                 class="form-control">
+          <textarea *ngIf="component.type === 'textarea'" 
+                    [id]="component.key" 
+                    [formControlName]="component.key" 
+                    [placeholder]="component.placeholder" 
+                    [rows]="component.rows || 3" 
+                    class="form-control">
+          </textarea>
+          <p-calendar *ngIf="component.type === 'date'" 
+                    [id]="component.key" 
+                    [formControlName]="component.key" 
+                    [showIcon]="true" 
+                    dateFormat="yy-mm-dd" 
+                    class="form-control">
+          </p-calendar>
+                    <!-- <p-calendar *ngIf="component.key === 'authorizationDate'"
+                            [id]="component.key" 
+                            [formControlName]="component.key" 
+                            [showIcon]="true"
+                            [iconStyleClass]="'orange-icon'" 
+                            dateFormat="yy-mm-dd"
+                            [showTime]="false"
+                            class="form-control"></p-calendar> -->
+          <div *ngIf="component.type === 'checkbox'">
+            <input type="checkbox" [id]="component.key" [formControlName]="component.key">
+            <label [for]="component.key">{{ component.label }}</label>
+          </div>
+          <div *ngIf="component.type === 'dropdown'">
+            <label [for]="component.key">{{ component.label }}</label>
+            <p-dropdown [id]="component.key" [formControlName]="component.key" [options]="component.options" optionLabel="label" class="form-control"></p-dropdown>
+         </div>
+        <input *ngIf="component.key === 'startTime' || component.key === 'endTime'"
+                       type="time"
+                       [id]="component.key" 
+                       [formControlName]="component.key" 
+                       [placeholder]="component.placeholder" 
+                       class="form-control">
+ <input *ngIf="component.key === 'numberOfHours'"
+        type="number"
+        [id]="component.key" 
+        [formControlName]="component.key" 
+        [placeholder]="component.placeholder" 
+        class="form-control"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        min="0"> 
+        <!-- Utilisation du modèle de chiffres pour restreindre les saisies aux chiffres uniquement -->
+ <!-- <p-calendar *ngIf="component.key === 'authorizationDate'"
+             [id]="component.key" 
+             [formControlName]="component.key" 
+             [showIcon]="true"
+             dateFormat="yy-mm-dd"
+             [showTime]="false"
+             class="form-control"></p-calendar> -->
+          <!-- <div *ngIf="component.type === 'dropdown'">
+            <label [for]="component.key">{{ component.label }}</label>
+            <select [id]="component.key" [formControlName]="component.key" class="form-control">
+              <option *ngFor="let option of component.options" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </div> -->
+          <div *ngIf="component.type === 'multiselect'">
+            <label [for]="component.key">{{ component.label }}</label>
+            <select [id]="component.key" [formControlName]="component.key" class="form-control" multiple>
+              <option *ngFor="let option of component.options" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </div>
+          <div *ngIf="form_dynamic.get(component.key)?.invalid && (form_dynamic.get(component.key)?.dirty || form_dynamic.get(component.key)?.touched)" class="text-danger">
+            <div *ngIf="form_dynamic.get(component.key)?.errors?.required">This field is required.</div>
+            <div *ngIf="form_dynamic.get(component.key)?.errors?.email">Invalid email format.</div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <button type="submit" class="btn btn-primary" style="color: black  !important">Submit</button>
+  </form>

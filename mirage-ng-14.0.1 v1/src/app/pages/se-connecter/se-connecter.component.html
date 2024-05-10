@@ -1,0 +1,120 @@
+
+
+<div class="login-body" [ngClass]="{'layout-dark': dark, 'layout-light': !dark}">
+
+    <div class="login-content">
+        <div class="night-switch">
+            <!-- <button class="dark-switch" (click)="dark = true">
+              <i class="pi pi-circle-on"></i>
+            </button>
+            <button class="light-switch" (click)="dark = false">
+              <i class="pi pi-circle-off"></i>
+            </button> -->
+        </div>
+        <div class="login-panel">
+            <div class="login-panel-content">
+                <div class="logo">
+                    <img src="assets/layout/images/asm.png" alt="mirage-layout" />
+                </div> 
+                 <h2 style="color: black !important;">Connectez-vous à ASM </h2>
+                <h4 style="color: black !important;">Bienvenue, veuillez utiliser le formulaire pour vous connecter au réseau ASM</h4>
+              
+
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="forms">
+                  <div class="input_box">
+                    <input type="text" id="email" class="input-field" formControlName="email" >
+                   
+                    <label for="email"  class="label"  required >Email</label>
+                    <i class="pi pi-envelope icon"></i>
+                  </div>
+                  <div class="input_box">
+                    <input type="password" id="password" class="input-field" formControlName="password" required >
+                    <label for="password" class="label">Mot de passe</label>
+                    <i class="pi pi-lock icon"></i>
+                  </div>
+                  <div class="col-12">
+                  
+                    <div class="buttons">
+                      <button  pButton class="secondary-button" (click)="redirectToMdpOubliee()">
+                        Mot de passe oublié?
+                      </button>
+                    </div>
+                  </div>
+                  <div class="input_box">
+                    <div class="buttons">
+                      <button pButton type="submit" class="input-submit" label="Se connecter" ></button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+            
+        </div>
+  
+  
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="forms">
+                    <!-- <div class="login-input-wrapper">
+                        <label for="nom">Nom</label>
+                        <input id="nom" formControlName="nom" placeholder="Entrez votre nom..." />
+                        <i class="pi pi-user"></i>
+                    </div>
+                     -->
+<!--                         
+                    <div class="input_box">
+                        <input type="text" id="email" class="input-field" required>
+                        <label for="email" class="label">Email</label>
+                        <i class="pi pi-envelope icon"></i>
+                      </div>
+                      <div class="input_box">
+                        <input type="password" id="mot_de_passe" class="input-field" required>
+                        <label for="mot_de_passe" class="label">Mot de passe</label>
+                        <i class="pi pi-lock icon"></i>
+                      </div> -->
+  
+                    <!-- <div class="login-input-wrapper">
+                        <label for="mot_de_passe">Mot de passe</label>
+                        <input type="password" id="mot_de_passe" formControlName="mot_de_passe" placeholder="Entrez votre mot de passe" [ngClass]="{'invalid': loginForm.controls.mot_de_passe.errors}"/>
+                        <i class="pi pi-lock"></i>
+                    </div>
+   -->
+                    <!-- <div class="col-12">
+                        <p-checkbox formControlName="checked" label="Souviens-toi de moi" binary="true"></p-checkbox>
+                        <div class="buttons">
+                        <button pButton class="secondary-button" (click)="sendResetLink()">
+                            Mot de passe oublié?
+                          </button>
+                        </div>
+                    </div>
+  
+                    <div class="input_box">
+                        
+                    <div class="buttons">
+                        <button pButton 
+                         type="submit" class="input-submit"  label="Se connecter" [disabled]="!loginForm.valid"></button>
+                        
+                      </div>
+                    </div>
+                </div>
+                
+              </form> --> 

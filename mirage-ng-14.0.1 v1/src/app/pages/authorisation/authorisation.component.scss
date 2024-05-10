@@ -1,0 +1,46 @@
+/* Style pour le conteneur du formulaire */
+.form-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Style pour les éléments du formulaire */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.text-danger {
+    color: red;
+}
+
+/* Style pour le bouton de soumission */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour les messages d'erreur */
+.text-danger {
+    color: red;
+    font-size: 14px;
+}

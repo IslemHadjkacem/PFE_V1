@@ -1,0 +1,27 @@
+<form [formGroup]="conges" (ngSubmit)="onSubmit()">
+    <div *ngFor="let component of formSchema.components">
+        <div class="form-group">
+            <label [for]="component.key" class="form-label">{{ component.label }}</label>
+            <input *ngIf="component.type === 'textfield'" 
+                   [type]="component.type === 'textfield' ? 'text' : 'text'" 
+                   [id]="component.key" 
+                   [formControlName]="component.key" 
+                   [placeholder]="component.placeholder" 
+                   class="form-control">
+            <select *ngIf="component.type === 'dropdown'" 
+                    [id]="component.key" 
+                    [formControlName]="component.key" 
+                    [placeholder]="component.placeholder" 
+                    class="form-control">
+                <option *ngFor="let option of component.options" [value]="option.value">{{ option.label }}</option>
+            </select>
+            <p-calendar *ngIf="component.type === 'date'" 
+                        [id]="component.key" 
+                        [formControlName]="component.key" 
+                        [showIcon]="true" 
+                        dateFormat="yy-mm-dd" 
+                        class="form-control"></p-calendar>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

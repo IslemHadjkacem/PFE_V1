@@ -1,0 +1,220 @@
+// // .form-group {
+// //     margin-bottom: 20px; /* Espacement entre les groupes de champs */
+// //   }
+  
+// //   /* Style pour les étiquettes */
+// //   label {
+// //     color: rgb(0, 0, 0); /* Couleur orange pour les étiquettes */
+// //   }
+  
+// //   /* Style pour les contrôles de formulaire */
+// //   input[type="text"],
+// //   input[type="email"],
+// //   textarea,
+// //   .form-check-input {
+// //     width: 100%; /* Les contrôles de formulaire prennent toute la largeur */
+// //     padding: 8px; /* Espacement interne des contrôles */
+// //     border: 1px solid #0a0a0a; /* Bordure grise */
+// //     border-radius: 4px; /* Coins arrondis */
+// //     box-sizing: border-box; /* Garde la largeur incluant le padding et la bordure */
+// //   }
+  
+// //   /* Style pour les boutons */
+// //   button {
+// //     padding: 10px 20px; /* Espacement interne des boutons */
+// //     background-color: rgba(255, 128, 0); /* Couleur orange pour les boutons */
+// //     border: none; /* Pas de bordure */
+// //     border-radius: 4px; /* Coins arrondis */
+// //     color: white; /* Texte blanc */
+// //     cursor: pointer; /* Curseur pointeur au survol */
+// //   }
+  
+// //   /* Style pour les messages d'erreur */
+// //   .text-danger {
+// //     color: red; /* Couleur rouge pour les messages d'erreur */
+// //   }
+
+// /* Style pour le conteneur du formulaire */
+// .form-container {
+//   max-width: 600px;
+//   margin: auto;
+// }
+
+// /* Style pour les éléments du formulaire */
+// .form-group {
+//   margin-bottom: 20px;
+// }
+
+// .form-label {
+//   font-weight: bold;
+// }
+
+// .form-control {
+//   width: 100%;
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   box-sizing: border-box;
+// }
+
+// .text-danger {
+//   color: red;
+// }
+
+// /* Style pour le bouton de soumission */
+// .btn-primary {
+//   background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+//   color: white;
+//   padding: 10px 20px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// .btn-primary:hover {
+//   background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+// }
+
+// /* Style pour les messages d'erreur */
+// .text-danger {
+//   color: red;
+//   font-size: 14px;
+// }
+
+
+
+// .orange-icon {
+//   .pi-calendar {
+//     background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%) !important;
+//       //color: orange !important;
+//   }
+
+  
+// }
+
+
+
+// Import des polices Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+Réinitialisation des styles
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: small;
+}
+
+// Styles du corps de la page
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+
+// Styles du conteneur du formulaire
+.container {
+  max-width: none; /* Supprime la largeur maximale fixe */
+  width: auto; /* Rétablit la largeur automatique basée sur le contenu */
+  background: #fff;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+// Styles pour le texte du formulaire
+.text {
+  text-align: center;
+  font-size: 41px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Styles pour le formulaire
+form {
+  padding: 30px 0 0 0;
+}
+
+// Styles pour les groupes de formulaire
+.form-group {
+  margin: 32px 0;
+}
+
+// Styles pour les champs de formulaire (input, textarea, select)
+.input-data,
+textarea,
+select {
+  width: 100%;
+  height: 40px;
+  margin: 0 0 20px 0;
+  position: relative;
+  margin-left: 30px;
+}
+
+// Styles pour les champs de formulaire (input, textarea)
+input,
+textarea {
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  margin-left: 30px;
+}
+
+// Styles pour les labels des champs de formulaire
+label { 
+  font-size: 16px;
+  //color: #56d8e4 ;
+  transition: all 0.3s ease;
+}
+
+// Styles pour la ligne de soulignement des champs de formulaire
+.underline:before {
+  position: absolute !important;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #3498db !important;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+// Styles pour le bouton de soumission du formulaire
+.btn-primary {
+  background: none;
+  border: none;
+  
+  color: #000000 !important;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) !important;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  position: absolute;
+  content: "";
+  height: 80%;
+  width: 300%;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  transition: all 0.4s;
+  left: -100%;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}

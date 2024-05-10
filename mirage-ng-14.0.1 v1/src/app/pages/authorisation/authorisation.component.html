@@ -1,0 +1,64 @@
+<form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+    <div *ngFor="let component of formSchema.components">
+        <ng-container *ngIf="component.type !== 'button'; else submitButton">
+            <div class="form-group">
+                <label [for]="component.key" class="form-label">{{ component.label }}</label>
+                <input *ngIf="component.type === 'textfield' && component.key !== 'departement' && component.key !== 'authorizationDate'" 
+                       [type]="component.type === 'text' ? 'text' : 'text'" 
+                       [id]="component.key" 
+                       [formControlName]="component.key" 
+                       [placeholder]="component.placeholder" 
+                       class="form-control">
+                <input *ngIf="component.key === 'startTime' || component.key === 'endTime'"
+                       type="date"
+                       [id]="component.key" 
+                       [formControlName]="component.key" 
+                       [placeholder]="component.placeholder" 
+                       class="form-control">
+                <input *ngIf="component.key === 'numberOfHours'"
+                       type="number"
+                       [id]="component.key" 
+                       [formControlName]="component.key" 
+                       [placeholder]="component.placeholder" 
+                       class="form-control"
+                       inputmode="numeric"
+                       pattern="[0-9]*"
+                       min="0"> <!-- Utilisation du modèle de chiffres pour restreindre les saisies aux chiffres uniquement -->
+                <p-calendar *ngIf="component.key === 'authorizationDate'"
+                            [id]="component.key" 
+                            [formControlName]="component.key" 
+                            [showIcon]="true"
+                            dateFormat="yy-mm-dd"
+                            [showTime]="false"
+                            class="form-control"></p-calendar>
+                <textarea *ngIf="component.type === 'textarea'" 
+                          [id]="component.key" 
+                          [formControlName]="component.key" 
+                          [placeholder]="component.placeholder" 
+                          [rows]="component.rows || 3" 
+                          class="form-control"></textarea>
+                <ng-container *ngIf="component.type === 'dropdown'">
+                    <p-dropdown 
+                        [id]="component.key" 
+                        [formControlName]="component.key" 
+                        [options]="component.options" 
+                        optionLabel="label" 
+                        [placeholder]="component.placeholder"
+                        class="form-control">
+                    </p-dropdown>
+                </ng-container>
+                <p-multiSelect *ngIf="component.type === 'multiselect'"
+                               [id]="component.key"
+                               [formControlName]="component.key"
+                               [options]="component.options"
+                               [optionLabel]="component.label">
+                </p-multiSelect>
+                <div *ngIf="formulaire.get(component.key)?.invalid && (formulaire.get(component.key)?.dirty || formulaire.get(component.key)?.touched)" class="text-danger">
+                    <div *ngIf="formulaire.get(component.key)?.errors?.required">This field is required.</div>
+                    <div *ngIf="formulaire.get(component.key)?.errors?.email">Invalid email format.</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,63 @@
+<!-- 
+<p-table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Couleur</th>
+        <th>Par Défaut</th>
+        <th>État de Validation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workflow of workflows">
+        <td>{{ workflow.id }}</td>
+        <td>{{ workflow.couleur }}</td>
+        <td><input type="checkbox" [checked]="workflow.parDefaut" disabled></td>
+        <td><input type="checkbox" [checked]="workflow.etatValidation" disabled></td>
+        <td>
+          <button (click)="deleteEtat(workflow.id)">
+            <i class="fas fa-trash"></i> Supprimer
+          </button>
+          <button (click)="printEtat(workflow.id)">
+            <i class="fas fa-print"></i> Imprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </p-table> -->
+
+
+
+  <p-table [value]="workflows">
+    <ng-template pTemplate="header">
+      <!-- <tr>
+        <th>Etat</th>
+        <th>Couleur</th>
+        <th>Par Défaut</th>
+        <th>État de Validation</th>
+        <th>Action</th>
+      </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-workflow>
+      <tr>
+        <td>{{ workflow.etat }}</td>
+        <td>{{ workflow.couleur }}</td>
+        <td>
+          <p-checkbox [binary]="true" [disabled]="true" [checked]="workflow.parDefaut"></p-checkbox>
+        </td>
+        <td>
+          <p-checkbox [binary]="true" [disabled]="true" [checked]="workflow.etatValidation"></p-checkbox>
+        </td>
+        <td>
+          <button pButton type="button" icon="pi pi-trash" (click)="deleteEtat(workflow.id)">
+            Supprimer
+          </button>
+          <button pButton type="button" icon="pi pi-print" (click)="printEtat(workflow.id)">
+            Imprimer
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  

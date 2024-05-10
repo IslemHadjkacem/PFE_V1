@@ -1,0 +1,25 @@
+
+<div class="grid">
+    <div class="col-12">
+      <form [formGroup]="approbateurform" (ngSubmit)="onSubmit()">
+      
+    
+        <div class="field">
+          <label for="multiselect">Les utilisateurs</label>
+          
+          <span class="p-float-label">
+            <p-multiSelect inputId="multiselect" formControlName="approbateurs" [options]="utilisateurs" 
+            optionLabel="nom" [filter]="false">
+              <ng-template let-utilisateurs pTemplate="selectedUtilisateurs">
+                <div class="multiselected-utilisateur">{{utilisateurs.nom}}</div>
+              </ng-template>
+            </p-multiSelect>
+          </span>
+        </div>
+        <div class="button-container">
+          <button type="submit" pButton label="Enregistrer"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

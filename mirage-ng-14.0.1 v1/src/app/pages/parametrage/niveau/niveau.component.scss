@@ -1,0 +1,11 @@
+.button-orange {
+    background-color: #fc6f11!important; /* Changer la couleur de fond */
+    color: #ffffff !important; /* Changer la couleur du texte */
+    border-radius: 50%; /* Définir la forme de cercle */
+    width: 35px; /* Ajuster la largeur du bouton selon vos besoins */
+    height: 35px; /* Ajuster la hauteur du bouton selon vos besoins */
+    display: flex; /* Permettre le centrage du contenu */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    padding: 0; /* Supprimer le rembourrage interne */
+}
